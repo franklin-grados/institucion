@@ -1,0 +1,22 @@
+/* Reduce la altura de las filas */
+#listStaff tbody tr {
+    height: 15px !important; /* Ajusta el valor según tus necesidades */
+}
+
+#listStaff tbody td {
+    height: 15px !important; /* Ajusta el valor según tus necesidades */
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+}
+
+@font-face {
+    font-family: "Mystery Quest";
+    src: url("mystery-quest.woff2");
+}
+
+p {
+    font-family: "Mystery Quest", cursive;
+    font-size: 150%;
+}
+
