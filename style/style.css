@@ -1,22 +1,26 @@
-/* Reduce la altura de las filas */
-#listStaff tbody tr {
-    height: 15px !important; /* Ajusta el valor según tus necesidades */
+
+@media (min-width: 768px) {
+    .contenido{
+        width: 100%;
+        margin: 2px;
+        margin-left: 6px;
+        padding: 5px;
+        height: 100vh;
+        border-radius: 5px;
+        /* border: solid 1px #007bff; */
+        background-color: #f8f9fa;
+        box-shadow: 0 0 8px #007bff;
+    }
 }
 
-#listStaff tbody td {
-    height: 15px !important; /* Ajusta el valor según tus necesidades */
-    padding-top: 2px;
-    padding-bottom: 2px;
-    
+@media (max-width: 768px) {
+    .contenido{
+        width: 99.9%;
+        margin-top: 2px;
+        height: 100vh;
+        border-radius: 5px;
+        border: solid 1px #007bff;
+        background-color: #f8f9fa;
+        box-shadow: 0 0 8px #007bff;
+    }
 }
-
-@font-face {
-    font-family: "Mystery Quest";
-    src: url("mystery-quest.woff2");
-}
-
-p {
-    font-family: "Mystery Quest", cursive;
-    font-size: 150%;
-}
-

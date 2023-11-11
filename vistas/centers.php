@@ -11,3 +11,4 @@ include_once("header.php");
 <?php   
 include_once("footer.php");
 ?>
+<script src="script/centers.js"></script>

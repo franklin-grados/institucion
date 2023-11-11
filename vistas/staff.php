@@ -1,8 +1,10 @@
 <?php   
 include_once("header.php");
 ?>
-<div class="container mt-5">
-    
+<div class="contenido">
+
+
+<div class="container-fluid bg-light">
     <div class="row">
         <div class="col-12 text-center">
             <p>List Staff</p>
@@ -18,8 +20,8 @@ include_once("header.php");
     </div>
     
     
-    <div class="responsive">
-        <table id="listStaff" class="table table-striped table-bordered table-condensed table-hover" style="width:100%">
+    <div class="table-responsive">
+        <table id="listStaff" class="table table-striped table-bordered table-condensed table-hover" style="width:99%">
             <thead>
                 <tr>
                     <th></th>
@@ -35,9 +37,10 @@ include_once("header.php");
     </div>
 </div>
 
-
+</div>
 
 
 <?php   
 include_once("footer.php");
 ?>
+<script src="script/staff.js"></script>
