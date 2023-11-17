@@ -99,7 +99,7 @@ CREATE TABLE users (
     staff_id INT(10),
     student_id INT(10),
     user_login VARCHAR(15),
-    user_password CHAR(40),
+    user_password CHAR(150),
     user_salt CHAR(32),
     FOREIGN KEY (guardian_id) REFERENCES guardians(guardian_id),
     FOREIGN KEY (staff_id) REFERENCES staff(staff_id),

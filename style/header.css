@@ -1,3 +1,4 @@
+
 :root {
     --size-nav: 180px;
     --color-btn_nav: white;
@@ -177,12 +178,14 @@ body{
     width: var(--size-nav);
     padding-top: 3px;
     padding-bottom: 3px;
+    padding-left: 5px;
     background-color: #0263ff;
     transition: 0.5s;
 }
 
 .navegacion{
     padding-top: 10px;
+    /* padding-left: 5px; */
     background-color: white;
     width: var(--size-nav);
     overflow: auto;
@@ -216,6 +219,7 @@ ul {
     color: var(--color-texto-primary);
     cursor: pointer;
     white-space: nowrap;
+    padding-left: 5px; 
 }
 
 .navegacion ul a,
@@ -228,6 +232,10 @@ ul {
     background-color: #0263ffb4;
     color: white;
 }
+.navegacion ul span span:hover {
+    background-color: #ffffff00;
+    color: white;
+}
 .navegacion ul li ul a:hover {
     background-color: #02ffc0b4;
     color: white;
@@ -235,6 +243,11 @@ ul {
 
 .navegacion ul li a:hover {
     background-color: #02ffc0b4;
+    color: white;
+}
+
+.navegacion ul li a span:hover {
+    background-color: #ffffff00;
     color: white;
 }
 

@@ -18,68 +18,61 @@ class Database {
     public function cerrarConexion() {
         $this->conexion->close();
     }
+    
+    public function select_fetch($sql, $datos = []) {
+        $stmt = $this->conexion->prepare($sql);
 
-
-    public function listarUnaFila($query, $datos = array()) {
-        if (!empty($datos)) {
-            // Si se proporcionan datos, prepara una consulta con marcadores de posición
-            $stmt = $this->conexion->prepare($query);
-            
-            if ($stmt === false) {
-                die("Error de preparación de la consulta: " . $this->conexion->error);
-            }
-            
-            $types = str_repeat('s', count($datos));
-            $stmt->bind_param($types, ...$datos);
-            
-            $stmt->execute();
-            
-            $resultado = $stmt->get_result();
-            
-            if ($resultado) {
-                return $resultado->fetch_assoc();
-            } else {
-                return null;
-            }
-        } else {
-            // Si no se proporcionan datos, ejecuta la consulta directamente
-            $resultado = $this->conexion->query($query);
-            
-            if ($resultado) {
-                return $resultado->fetch_assoc();
-            } else {
-                return null;
-            }
-        }
-    }
-    
-    
-    public function consultarVariasFilas($query, $datos = array()) {
-        $stmt = $this->conexion->prepare($query);
-    
         if ($stmt === false) {
-            die("Error de preparación de la consulta: " . $this->conexion->error);
+            throw new Exception("Error al preparar la consulta: " . $this->conexion->error);
         }
-    
+
         if (!empty($datos)) {
-            $types = str_repeat('s', count($datos));
-            $stmt->bind_param($types, ...$datos);
+            $this->vincularParametros($stmt, $datos);
         }
-    
-        $stmt->execute();
+
+        if (!$stmt->execute()) {
+            throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+        }
+
         $resultado = $stmt->get_result();
-    
-        if ($resultado) {
-            $filas = array();
-            while ($fila = $resultado->fetch_assoc()) {
-                $filas[] = $fila;
-            }
-            $stmt->close();
-            return $filas;
-        } else {
-            return null;
+
+        if (!$resultado) {
+            throw new Exception("Error al obtener el resultado: " . $stmt->error);
         }
+
+        $fila = $resultado->fetch_assoc();
+
+        $stmt->close();
+
+        return $fila;
     }
+    
+    public function select_fetch_all($sql, $datos = []) {
+        $stmt = $this->conexion->prepare($sql);
+
+        if ($stmt === false) {
+            throw new Exception("Error al preparar la consulta: " . $this->conexion->error);
+        }
+        if (!empty($datos)) {
+            $this->vincularParametros($stmt, $datos);
+        }
+        if (!$stmt->execute()) {
+            throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+        }
+        $resultado = $stmt->get_result();
+        if (!$resultado) {
+            throw new Exception("Error al obtener el resultado: " . $stmt->error);
+        }
+        $filas = $resultado->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        return $filas;
+    }
+
+    private function vincularParametros($stmt, $datos) {
+        $tipos = str_repeat('s', count($datos)); // Asume que todos los datos son cadenas
+        $stmt->bind_param($tipos, ...$datos);
+    }
+    
 }
 
 
