@@ -20,10 +20,11 @@
   </button>
   <header id="nav_pincipal" class="nav-ini">
     <div class="header_navv">
-      <img src="../librari/login/images/university.png" width="135" height="45" alt="">
-    <button class="btn-nav bs-4" type="button" id="nav_desac">
-    <i class="bi bi-menu-button-wide-fill"></i>
-  </button>
+      <button class="btn-nav bs-4" type="button" id="nav_desac">
+        <i class="bi bi-menu-button-wide-fill"></i>
+      </button>
+      <img src="../librari/images/university.png" class="img-nav" alt="">
+    
     </div>
     <nav class="navegacion ">
       <input type="text" id="filtro" class="input-filtro" placeholder="Buscar...">
@@ -31,7 +32,7 @@
         
         <li>
           <ul class="one-list one-navegacion">
-            <li><a href="start.php"><span class="fa fa-home p-isq"></span>  Start</a></li>
+            <li><a href="start.php"><span class="fa fa-home p-isq"></span>  University Page</a></li>
           </ul>
         </li>
 
@@ -42,29 +43,15 @@
         </li>
 
         <li>
-          <span class="mostrar-lista">
-            <span class="fa fa-user p-isq"></span>
-            <!-- <i class="fa-solid fa-user"></i> -->
-            <div class="texto"> OTROS
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </div>
-          </span>
-
-          <ul class="more-navegacion inactivo">
-            <li><a href="productos.php"> Productos</a></li>
-            <li><a href="compra.php"> Compras</a></li>
-            <li><a href="ordenc.php"> Orden de Compra</a></li>
-            <li><a href="transferencia.php"> Transferencias</a></li>
-            <li><a href="almacen.php"> Almacenes</a></li>
-            <li><a href="cierre_inventario.php"> Cierre de Inventario</a></li>
+          <ul class="one-list one-navegacion">
+            <li><a href="courses.php"><span class="fa fa-book p-isq"></span>  Courses</a></li>
           </ul>
         </li>
+
         <li>
           <span class="mostrar-lista">
             <span class="fa fa-home p-isq"></span>
-            <div class="texto"> Cliente
+            <div class="texto"> Otros
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
               </svg>
@@ -72,18 +59,11 @@
           </span>
 
           <ul class="more-navegacion inactivo">
-            <li><a href="productos.php"> Productos</a></li>
-            <li><a href="compra.php"> Compras</a></li>
-            <li><a href="ordenc.php"> Orden de Compra</a></li>
+            <li><a href="productos.php"> Option-1</a></li>
+            <li><a href="compra.php"> Option-2</a></li>
+            <li><a href="ordenc.php"> Option-3</a></li>
           </ul>
-        </li>
-        <li>
-          <ul class="one-list one-navegacion">
-            <li><a href="productos.php"><span class="fa fa-home p-isq"></span> Productos</a></li>
-          </ul>
-        </li>
-        
-        
+        </li>        
       </ul>
 
 

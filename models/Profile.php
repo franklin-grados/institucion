@@ -22,12 +22,4 @@ class Profile extends Database{
 
 }
 
-
-
-
-
-
-
-
-
 ?>

@@ -20,7 +20,7 @@ switch ($_GET["op"]){
 }
 
 } catch (Exception $e) {
-    echo (["status" => false, $e->getMessage()]);
+    echo (["status" => false, "error" => $e->getMessage()]);
 }
 
 ?>
