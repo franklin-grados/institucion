@@ -10,6 +10,8 @@
         background-color: #f8f9fa;
         box-shadow: 0 0 8px #007bff;
         overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
     }
 
     .contenido::-webkit-scrollbar {
@@ -18,7 +20,7 @@
 
     .contenido::-webkit-scrollbar-thumb {
         background-color: #888; /* Color del botón de desplazamiento */
-        border-radius: 2px; /* Bordes redondeados del botón de desplazamiento */
+        border-radius: 1px; /* Bordes redondeados del botón de desplazamiento */
     }
 
     .contenido::-webkit-scrollbar-track {
@@ -26,7 +28,8 @@
     }
 
     .contenido::-webkit-scrollbar-thumb:hover {
-        background-color: #007bff; /* Cambio de color al pasar el mouse sobre el botón de desplazamiento */
+        background-color: #007bff;
+        width: 10px;
     }
 }
 
@@ -159,27 +162,11 @@
     margin: 6px;
     padding: 0px;
     overflow: hidden;
-    animation: changeColors 10s linear infinite;
     cursor: pointer;
+    background-size: cover;
+    transform: scale(1);
 }
 
-@keyframes changeColors {
-    0% {
-        background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
-    }
-    25% {
-        background: linear-gradient(45deg, #0000ff, #ff0000, #00ff00);
-    }
-    50% {
-        background: linear-gradient(45deg, #00ff00, #0000ff, #ff0000);
-    }
-    75% {
-        background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
-    }
-    100% {
-        background: linear-gradient(45deg, #0000ff, #ff0000, #00ff00);
-    }
-}
 
 .cuadro-curso:hover {
     transform: scale(1.1);
@@ -192,4 +179,72 @@
     height: 70px;
     padding: 3px;
     background-color: #f8f9fa ;
+}
+
+
+/*CALENDARIO*/
+
+#calendario {
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+#calendario table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#calendario th, #calendario td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#calendario th {
+    background-color: #f2f2f2;
+}
+
+#calendario td {
+    cursor: pointer;
+}
+
+#calendario td:hover {
+    background-color: #e6e6e6;
+}
+
+
+#calendario td.celeste {
+    background-color: #87CEEB; /* Color celeste */
+}
+
+#calendario td.sabado {
+    background-color: #FF0000; /* Rojo */
+    color: #FFFFFF; /* Texto en blanco para que sea legible */
+}
+
+
+.tabular-list-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  padding: 0;
+}
+
+.tabular-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  margin-top: 5px;
+}
+
+.element-card {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Primera columna ocupa 1 fracción, segunda columna ocupa 3 fracciones */
+    gap: 1px; /* Espacio entre columnas */
+    padding: 0px; /* Espaciado interior del contenedor */
+}
+
+.conte{
+ font-size: 30px;
 }

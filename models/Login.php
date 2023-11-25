@@ -32,9 +32,20 @@ class Login extends Database{
         if($datos['guardian_id']){
             $sql= "SELECT * FROM guardians WHERE guardian_id=?";
             $data = $this->select_fetch($sql, [$datos['guardian_id']]);
+            $_SESSION['user_id']=$datos['user_id'];
+            $_SESSION['guardian_id']=$data['guardian_id'];
+            $_SESSION['firstname']=$data['guardian_name'];
+            $_SESSION['lastname']=$data['guardian_name'];
+            $_SESSION['email'] = $datos['user_login'];
         }else if($datos['staff_id']){
-            $sql= "SELECT * FROM guardians WHERE staff_id=?";
+            $sql= "SELECT * FROM staff WHERE staff_id=?";
             $data = $this->select_fetch($sql, [$datos['staff_id']]);
+            $_SESSION['user_id']=$datos['user_id'];
+            $_SESSION['staff_id']=$data['staff_id'];
+            $_SESSION['firstname']=$data['staff_firstname'];
+            $_SESSION['lastname']=$data['staff_lastname'];
+            $_SESSION['email'] = $datos['user_login'];
+            $_SESSION['center_id']=$data['center_id'];
         }else if($datos['student_id']){
             $sql= "SELECT * FROM students WHERE student_id=?";
             $data = $this->select_fetch($sql, [$datos['student_id']]);

@@ -321,3 +321,18 @@ p {
     font-size: 150%;
 }
 
+
+
+.close-session{
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 15px;
+    
+}
+
+.off-session{
+    color: red;
+    font-size: 30px;
+    cursor: pointer;
+}

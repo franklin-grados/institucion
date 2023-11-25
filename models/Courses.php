@@ -8,7 +8,7 @@ class Courses extends Database{
     }
 
     public function getClases($student_id){
-        $consulta = "SELECT cs.cs_id, cs.class_id, cs.student_id, c.class_name, c.schoolsession_id FROM classes_students cs
+        $consulta = "SELECT cs.cs_id, cs.class_id, cs.student_id, c.class_name, c.schoolsession_id, c.image FROM classes_students cs
         INNER JOIN classes c ON c.class_id=cs.class_id
         WHERE student_id=?";
         $result = $this->select_fetch_all($consulta, [$student_id]);

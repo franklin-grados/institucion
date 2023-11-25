@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION["user_id"]))
+{
+  header("Location:../login.php");
+}else{
 include_once("header.php");
 ?>
 <div class="contenido">
@@ -23,9 +27,11 @@ include_once("header.php");
 
 <?php   
 include_once("modal/coursesModal.php");
-
-
 include_once("footer.php");
-
 ?>
 <script src="script/courses.js"></script>
+<?php 
+
+}
+
+ ?>

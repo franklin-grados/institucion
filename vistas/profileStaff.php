@@ -114,7 +114,7 @@ include_once("header.php");
 <?php   
 include_once("footer.php");
 ?>
-<script src="script/profile.js"></script>
+<script src="script/profileStaff.js"></script>
 
 <?php 
 

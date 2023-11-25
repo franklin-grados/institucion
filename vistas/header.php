@@ -70,5 +70,7 @@
     </nav>
   </header>
 
+  <div class="close-session"><i class="fa-solid fa-power-off off-session" title="Sign off" onclick="closeSession()"></i></div>
+
 
 
